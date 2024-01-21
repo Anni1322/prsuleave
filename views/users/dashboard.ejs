@@ -337,6 +337,13 @@
         </ul>
       </nav>
     </header>
+    <% if (typeof message !== 'undefined') { %>
+      <h4 style="background-color: green;"><%= message %></h4>
+        <!-- Add an alert based on the message -->
+        <script>
+            alert('<%= message %>');
+        </script>
+    <% } %>
     <div class="dashboard">
       <aside class="sidebar">
         <!-- Sidebar content (e.g., navigation links, user profile) -->

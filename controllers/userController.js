@@ -141,9 +141,6 @@ const insertUser = async(req, res)=>{
         }
     }
 
-
-
-
      }catch(error){
          console.log(error.message)
      }
@@ -169,6 +166,7 @@ const addLeave = async(req, res)=>{
             applied_date:date,
             user_id:req.body.user_id,
             days:req.body.days,
+            // image:req.file.filename,
           
            
         });
@@ -176,7 +174,7 @@ const addLeave = async(req, res)=>{
       
         const userData = await leave.save();
         if(userData){
-            res.render('applyleave',{message:'Apply has been successflly.',user:users})
+            res.render('dashboard',{message:'Apply has been successflly.',user:users})
         }else{
             res.render('applyleave',{message:'Your request failed'})
         }

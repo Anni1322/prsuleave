@@ -46,7 +46,11 @@ const leaveSchema = mongoose.Schema({
   user_id:{
     type:String,
     required:false
-  }
+  },
+//   image:{
+//     type:String,
+//     required:false
+// },
  
 
     
