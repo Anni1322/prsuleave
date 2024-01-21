@@ -8,7 +8,7 @@ const leaveSchema = mongoose.Schema({
     },
     eid:{
         type:String,
-        required:true
+        required:false
 
     },
     d_name:{
