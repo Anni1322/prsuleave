@@ -83,13 +83,13 @@ const verifyLogin = async (req, res) => {
 
       if (passwordMatch) {
         // check admin or not
-        if (userData.is_admin === 0) {
+        if (userData.is_administrator === 0) {
           res.render("login", { message: "Email and Password is incorrect." });
         } else {
           req.session.user_id = userData._id;
           
           // send admin home
-          res.redirect("/admin/home");
+          res.redirect("/administrator/home");
         }
       } else {
         res.render("login", { message: "Email and Password is incorrect." });

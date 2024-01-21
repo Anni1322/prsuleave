@@ -128,8 +128,8 @@ const insertUser = async(req, res)=>{
             image:req.file.filename,
             password:spassword,
             eid:"prsu101",
-            is_admin:0
-            
+            is_admin:0,
+            is_administrator:0
         });
 
         const userData = await user.save();
