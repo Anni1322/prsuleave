@@ -50,7 +50,7 @@ admin_route.get('/',administratorAuth.islogout,administratorController.loadLogin
 admin_route.post('/',administratorController.verifyLogin);
 
 // admin_route.get('/home',administratorAuth.islogin,administratorController.loadDashboard);
-admin_route.get('/home',administratorController.loadDashboard);
+admin_route.get('/home',administratorAuth.islogin,administratorController.loadDashboard);
 
 admin_route.get('/logout',administratorAuth.islogin,administratorController.loadlogout);
 

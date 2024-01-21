@@ -7,11 +7,11 @@ const islogin = async (req, res, next) => {
     if (userdata.is_administrator === 2) {
       if (req.session.user_id) {
       } else {
-        res.send("/administrator/home");
+        res.send("/home");
       }
       next();
     } else {
-      res.send("/administrator/home");
+      res.send("/home");
     }
   } catch (error) {
     console.log(error.message);
