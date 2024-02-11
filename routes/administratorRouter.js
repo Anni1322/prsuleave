@@ -49,8 +49,8 @@ admin_route.get('/',administratorAuth.islogout,administratorController.loadLogin
 
 admin_route.post('/',administratorController.verifyLogin);
 
-// admin_route.get('/home',administratorAuth.islogin,administratorController.loadDashboard);
 admin_route.get('/home',administratorAuth.islogin,administratorController.loadDashboard);
+
 
 admin_route.get('/logout',administratorAuth.islogin,administratorController.loadlogout);
 
@@ -103,7 +103,7 @@ admin_route.get('/userexportPdf',administratorController.userexportPdf);
 
 admin_route.get('*',function(req, res){
 
-    res.redirect('/admin');
+    res.redirect('/administrator');
 });
 
 module.exports = admin_route;

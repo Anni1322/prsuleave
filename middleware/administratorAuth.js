@@ -4,7 +4,7 @@ const islogin = async (req, res, next) => {
     const user_id = req.session.user_id;
     const userdata = await User.findById({ _id: user_id });
 
-    if (userdata.is_administrator === 2) {
+    if (userdata.is_administrator === 1) {
       if (req.session.user_id) {
       } else {
         res.send("/home");
@@ -21,7 +21,7 @@ const islogin = async (req, res, next) => {
 const islogout = async (req, res, next) => {
   try {
     if (req.session.user_id) {
-      res.redirect("/home");
+      res.redirect("/administrator/home");
     }
     next();
   } catch (error) {

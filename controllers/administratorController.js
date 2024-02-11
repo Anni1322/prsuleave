@@ -88,7 +88,7 @@ const verifyLogin = async (req, res) => {
         } else {
           req.session.user_id = userData._id;
           
-          // send admin home
+          // send administrator home
           res.redirect("/administrator/home");
         }
       } else {
