@@ -7,65 +7,13 @@
     />
     <title>Employee Leave Form</title>
     
-    <style>
-        body {
-          font-family: Arial, sans-serif;
-          background-color: #f4f4f4;
-          margin: 0;
-          padding: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-    
-        form {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 15px;
-          background-color: white;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-    
-        h1 {
-          grid-column: span 2;
-          text-align: center;
-        }
-    
-        label {
-          font-weight: bold;
-        }
-    
-        input {
-          width: 100%;
-          padding: 10px;
-          margin: 5px 0;
-          box-sizing: border-box;
-        }
-        select{
-          width: 100%;
-          padding: 10px;
-          margin: 5px 0;
-          box-sizing: border-box;
-        }
-    
-        input[type="submit"] {
-          grid-column: span 2;
-          background-color: #4caf50;
-          color: white;
-          cursor: pointer;
-        }
-        input[type="submit"]:hover {
-          background-color: #45a049;
-        }
-    </style>
-</head>
+
+  </head>
 <body>
 
     <div class="leave-form">
-        <h2>Employee Leave Form</h2>
+        <h2 class="text-center">Employee Leave Form</h2>
+        
         <% 
         if(typeof message !== 'undefined'){
             %>
@@ -73,58 +21,59 @@
             <%
         }
         %>
-        
       
-        <form action="" method="post">
-            <div class="form-group">
-              <label for="leave-type">Employee Name:</label><span style="color: red;">*</span>
-              <select id="employee-name" name="name">
-                  <option value="<%= user.name %>"><%= user.name %></option>
-              </select>
-          </div>
-            <div class="form-group">
-              <label for="leave-type">Department:</label>
-              <select id="employee-name" name="d_name">
-                  <option value="<%= user.department %>"><%= user.department %> </option>
-              </select>
-          </div>
-
-            <div class="form-group">
-                <label for="leave-type">Your EID:</label>
-                <!-- <span style="color: red;">*</span> -->
-                <input type="text" name="eid" >
-            </div>
-            <div class="form-group">
-                <label for="leave-type">Leave Type:</label>
-                <select id="leave-type" name="leave_type">
-                    <option value="vacation">Vacation</option>
-                    <option value="sick-leave">Sick Leave</option>
-                    <option value="medical">Medical</option>
-                    <option value="personal">Personal</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="start-date">Start Date:</label><span style="color: red;">*</span>
-                <input type="date"  id="start_date" name="start_date" required>
-            </div>
-            <div class="form-group">
-                <label for="end-date">End Date: </label> <span style="color: red;">*</span>
-                <input type="date" id="end_date" name="end_date" oninput="calculateDateDifference()"  required>
-            </div>
-            <div class="form-group">
-              <!-- <button class="btn bg-primary" onclick="return calculateDateDifference()"> Check days  </button> -->
-                <input type="text" id="result" name="days" readonly>
-            </div>
-              <!-- hidden data id -->
-                <input  type="hidden"  name="user_id" value="<%= user._id %>"  />
-            <div class="form-group">
-                <label for="reason">Suport Document:</label>
-                <!-- <input type="file" name="image">  -->
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit Leave Request">
-            </div>
-        </form>
+  <div class="container">
+    <form action="" method="post" class="row g-3">
+      <a class="text-center bg-secondary">.</a>
+      <a class="text-center bg-primary text-white" href="/home">Home</a>
+      <div class="col-md-6">
+          <label for="employee-name" class="form-label">Employee Name:</label><span style="color: red;">*</span>
+          <select id="employee-name" name="name" class="form-select">
+              <option value="<%= user.name %>"><%= user.name %></option>
+          </select>
+      </div>
+      <div class="col-md-6">
+          <label for="department" class="form-label">Department:</label>
+          <select id="employee-name" name="d_name" class="form-select">
+              <option value="<%= user.department %>"><%= user.department %> </option>
+          </select>
+      </div>
+      <div class="col-md-6">
+          <label for="eid" class="form-label">Your EID:</label>
+          <input type="text" name="eid" class="form-control">
+      </div>
+      <div class="col-md-6">
+          <label for="leave-type" class="form-label">Leave Type:</label>
+          <select id="leave-type" name="leave_type" class="form-select">
+              <option value="vacation">Vacation</option>
+              <option value="sick-leave">Sick Leave</option>
+              <option value="medical">Medical</option>
+              <option value="personal">Personal</option>
+          </select>
+      </div>
+      <div class="col-md-6">
+          <label for="start-date" class="form-label">Start Date:</label><span style="color: red;">*</span>
+          <input type="date" id="start_date" name="start_date" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+          <label for="end-date" class="form-label">End Date:</label> <span style="color: red;">*</span>
+          <input type="date" id="end_date" name="end_date" class="form-control" oninput="calculateDateDifference()" required>
+      </div>
+      <div class="col-md-6">
+          <label for="result" class="form-label">Number of Days:</label>
+          <input type="text" id="result" name="days" class="form-control" readonly>
+      </div>
+      <input type="hidden" name="user_id" value="<%= user._id %>">
+      <div class="col-md-6">
+          <label for="reason" class="form-label">Support Document:</label>
+          <!-- <input type="file" name="image">  -->
+      </div>
+      <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit Leave Request</button>
+      </div>
+  </form>
+  
+  </div>
 
      
  
