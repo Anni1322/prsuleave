@@ -1,6 +1,10 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
@@ -11,8 +15,11 @@
   </head>
 <body>
 
+<div class="cantainer card bg-primary-subtle">
+
+
     <div class="leave-form">
-        <h2 class="text-center">Employee Leave Form</h2>
+        <h2 class="text-center bg-primary rouned-3">Employee Leave Form</h2>
         
         <% 
         if(typeof message !== 'undefined'){
@@ -24,8 +31,8 @@
       
   <div class="container">
     <form action="" method="post" class="row g-3">
-      <a class="text-center bg-secondary">.</a>
-      <a class="text-center bg-primary text-white" href="/home">Home</a>
+      <!-- <a class="text-center bg-secondary">.</a> -->
+      <a class="text-center bg-warning text-white" href="/home">Home</a>
       <div class="col-md-6">
           <label for="employee-name" class="form-label">Employee Name:</label><span style="color: red;">*</span>
           <select id="employee-name" name="name" class="form-select">
@@ -72,7 +79,7 @@
           <button type="submit" class="btn btn-primary">Submit Leave Request</button>
       </div>
   </form>
-  
+</div>
   </div>
 
      
